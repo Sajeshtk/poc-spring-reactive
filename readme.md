@@ -1,0 +1,34 @@
+# POC for spring reactive with docker 
+
+This is a POC for getting started with Spring boot reactive and Docker
+
+## Installation and running
+
+Prerequisite: Docker for windows installed (if you are on windows machine). Apache Maven installed locally. 
+
+Maven way of building
+```mvn
+mvn clean install
+```
+
+Docker way of building
+```docker
+docker build -t poc/spring-boot-reactive-docker .
+```
+
+Run some containers
+```docker
+docker run --name spring-reactive-instance-1 -d -p 8080:8080 poc/spring-boot-reactive-docker
+docker run --name spring-reactive-instance-2 -d -p 8081:8080 poc/spring-boot-reactive-docker
+```
+
+Miscellaneous commands to explore around
+```docker
+docker ps
+docker ps -a
+docker image ls
+docker container stop spring-reactive-instance-1
+docker container ls -a
+docker container rm spring-reactive-instance-1
+docker exec -it spring-reactive-instance-1 sh
+```

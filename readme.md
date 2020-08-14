@@ -16,6 +16,13 @@ Docker way of building
 docker build -t poc/spring-boot-reactive-docker .
 ```
 
+Build Docker image using maven
+```docker
+mvn com.spotify:dockerfile-maven-plugin:build
+Optionally pass the path to the file as : -Ddockerfile.repository=myorg/myapp
+```
+
+
 Run some containers
 ```docker
 docker run --name spring-reactive-instance-1 -d -p 8080:8080 poc/spring-boot-reactive-docker

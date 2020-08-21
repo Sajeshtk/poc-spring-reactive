@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.springframework</groupId>
+    <artifactId>gs-reactive-rest-service-pom-packaging</artifactId>
+    <version>0.1.0</version>
+
+    <scm>
+        <connection>scm:git:https://github.com/Sajeshtk/poc-spring-reactive.git</connection>
+        <developerConnection>scm:git:https://github.com/Sajeshtk/poc-spring-reactive.git</developerConnection>
+        <url>https://github.com/Sajeshtk/poc-spring-reactive.git</url>
+    </scm>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-scm-plugin</artifactId>
+                <version>1.11.2</version>
+                <configuration>
+                    <goals>package</goals>
+                    <username>${GITHUB_USERNAME}</username>
+                    <password>${GITHUB_PASSWORD}</password>
+                    <token>${TOKEN}</token> <!-- Need to check how token is done -->
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>

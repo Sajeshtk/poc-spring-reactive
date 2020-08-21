@@ -15,12 +15,12 @@ import java.time.LocalDateTime;
 @Component
 public class GreetingHandler {
 
-    @Autowired
-    private KafkaTemplate<Object, Object> template;
+//    @Autowired
+//    private KafkaTemplate<Object, Object> template;
 
     public Mono<ServerResponse> hello(ServerRequest request) {
 
-            this.template.send("topic1", "Hello at : "+ LocalDateTime.now());
+//      this.template.send("topic1", "Hello at : "+ LocalDateTime.now());
 
         return ServerResponse.ok().contentType(MediaType.TEXT_PLAIN)
                 .body(BodyInserters.fromValue("Hello, Spring!"));
